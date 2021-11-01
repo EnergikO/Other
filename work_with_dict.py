@@ -19,12 +19,12 @@ def delete_items(_dict: dict, *keys) -> dict:
 	return new_dict
 
 
-def sort_by_keys(_dict: dict) -> list:
-	return sorted(list(_dict.items()), key=lambda x: x[0])
+def sort_by_keys(_dict: dict, reverse=False) -> list:
+	return sorted(list(_dict.items()), key=lambda x: x[0], reverse=reverse)
 
 
-def sort_by_values(_dict: dict) -> list:
-	return sorted(list(_dict.items()), key=lambda x: x[1])
+def sort_by_values(_dict: dict, reverse=False) -> list:
+	return sorted(list(_dict.items()), key=lambda x: x[1], reverse=reverse)
 
 
 def fill_dict_randomly(n, _range):
@@ -35,3 +35,8 @@ def fill_dict_randomly(n, _range):
 		_dict[i] = randint(*_range)
 
 	return _dict
+
+
+def print_dict(_dict):
+	for elem in _dict:
+		print(elem.__repr__())
