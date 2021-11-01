@@ -39,4 +39,9 @@ def fill_dict_randomly(n, _range):
 
 def print_dict(_dict):
 	for elem in _dict:
-		print(elem.__repr__())
+		try:
+			print(elem.__repr__())
+
+		except AttributeError:
+			print(elem)
+
