@@ -37,7 +37,7 @@ def fill_dict_randomly(n, _range):
 	return _dict
 
 
-def print_dict(_dict):
+def print_dict(_dict: dict):
 	for elem in _dict:
 		try:
 			print(elem.__repr__())
