@@ -7,7 +7,7 @@ def get_data_from_url(url: str) -> str:
 	return translate(data)
 
 
-def fact_about_numbers(randomly: bool=False) -> str:
+def fact_about_number(randomly: bool=False) -> str:
 	if randomly:
 		from random import randint, choice
 		number = randint(0, 9999)
@@ -48,7 +48,7 @@ def fact_about_year(randomly: bool=False) -> str:
 
 
 def main():
-	print(fact_about_numbers(True))
+	print(fact_about_number(True))
 	print(fact_about_date(True))
 	print(fact_about_year(True))
 
