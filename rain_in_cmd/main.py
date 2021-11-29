@@ -1,23 +1,20 @@
 from random import random, choice
 from time import sleep
 
-try:    
+try:
     from config import *
-  
-except ImportError:
-    open('config.py', 'w').write('''
-from os import get_terminal_size
+    
+    if not (check1 and check2):
+        raise NameError
 
-LENGTH, HEIGHT = get_terminal_size()
+except (ImportError, NameError, SyntaxError):
+    from new_config import new_config
+    
+    new_config(bool(int(input('config file not found or damaged!\nI will create another one for you\nWould you like to write down all the parameters yourself?\n1 - I can write all parameters myself\n0 - do it without me\n'))))
 
-SPEED = 90  # FPS
-ALPHABET = list('+--aaa@@@')  # in the terminal in the opposite direction
-COUNT_OF_DROPS = 0.1  # float between 0 and 1
+finally:
+    from config import *
 
-# WINDOWS ONLY
-TEXT_COLOR = '3'
-BACK_COLOR = '0'
-''')
 
 try:
     from os import system
